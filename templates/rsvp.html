@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP</title>
+</head>
+<body>
+    <h1>RSVP to an Event</h1>
+    <form method="POST">
+        <label for="user_id">User ID:</label>
+        <input type="text" name="user_id" required><br>
+        <label for="event_id">Event:</label>
+        <select name="event_id">
+            {% for event in events %}
+                <option value="{{ event[0] }}">{{ event[1] }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="status">Status:</label>
+        <select name="status">
+            <option value="Accepted">Accepted</option>
+            <option value="Declined">Declined</option>
+            <option value="Pending">Pending</option>
+        </select><br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

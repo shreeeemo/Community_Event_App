@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+<body>
+    <h1>Send a Message</h1>
+    <form method="POST">
+        <label for="message_content">Message Content:</label>
+        <textarea name="message_content" required></textarea><br>
+        <label for="sent_by">Sent By (User ID):</label>
+        <input type="text" name="sent_by" required><br>
+        <label for="sent_to">Sent To (User ID):</label>
+        <input type="text" name="sent_to" required><br>
+        <label for="event_id">Event:</label>
+        <select name="event_id">
+            {% for event in events %}
+                <option value="{{ event[0] }}">{{ event[1] }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Send Message</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>
