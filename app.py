@@ -130,7 +130,7 @@ def create_event():
         return redirect("/events")
     else:
         return render_template("create_event.html")
-
+    
 
 if __name__ == "__main__":
     app.run(debug=True)

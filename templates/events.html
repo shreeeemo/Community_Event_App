@@ -6,7 +6,7 @@
     <title>Events</title>
 </head>
 <body>
-    <h1>Community Events</h1>
+    <h1>All Events</h1>
     <table border="1">
         <tr>
             <th>Event ID</th>
@@ -15,7 +15,7 @@
             <th>Date</th>
             <th>Time</th>
             <th>Location</th>
-            <th>Created By (User ID)</th>
+            <th>Created By</th>
         </tr>
         {% for event in events %}
         <tr>
@@ -29,6 +29,9 @@
         </tr>
         {% endfor %}
     </table>
-    <a href="/">Go Back to Home</a>
+    <br>
+    <a href="/create_event">
+        <button>Create a New Event</button>
+    </a>
 </body>
 </html>
