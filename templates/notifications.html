@@ -6,12 +6,23 @@
     <title>Notifications</title>
 </head>
 <body>
-    <h1>Event Reminders</h1>
-    <ul>
+    <h1>Notifications</h1>
+    <table border="1">
+        <tr>
+            <th>Notification ID</th>
+            <th>User</th>
+            <th>Content</th>
+            <th>Type</th>
+        </tr>
         {% for notification in notifications %}
-            <li>{{ notification[2] }}</li>
+        <tr>
+            <td>{{ notification[0] }}</td>
+            <td>{{ notification[1] }}</td>
+            <td>{{ notification[2] }}</td>
+            <td>{{ notification[3] }}</td>
+        </tr>
         {% endfor %}
-    </ul>
-    <a href="/">Back to Home</a>
+    </table>
+    <a href="/">Go Back to Home</a>
 </body>
 </html>

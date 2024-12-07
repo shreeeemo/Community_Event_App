@@ -6,24 +6,36 @@
     <title>RSVP</title>
 </head>
 <body>
-    <h1>RSVP to an Event</h1>
-    <form method="POST">
-        <label for="user_id">User ID:</label>
-        <input type="text" name="user_id" required><br>
-        <label for="event_id">Event:</label>
-        <select name="event_id">
-            {% for event in events %}
-                <option value="{{ event[0] }}">{{ event[1] }}</option>
-            {% endfor %}
-        </select><br>
-        <label for="status">Status:</label>
-        <select name="status">
+    <h1>RSVP Management</h1>
+    <form action="/rsvp" method="POST">
+        <label>User ID:</label><br>
+        <input type="number" name="user_id" required><br>
+        <label>Event ID:</label><br>
+        <input type="number" name="event_id" required><br>
+        <label>Status:</label><br>
+        <select name="status" required>
             <option value="Accepted">Accepted</option>
-            <option value="Declined">Declined</option>
             <option value="Pending">Pending</option>
+            <option value="Declined">Declined</option>
         </select><br>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit RSVP</button>
     </form>
-    <a href="/">Back to Home</a>
+    <h2>Current RSVPs:</h2>
+    <table>
+        <tr>
+            <th>RSVP ID</th>
+            <th>User ID</th>
+            <th>Event ID</th>
+            <th>Status</th>
+        </tr>
+        {% for rsvp in rsvps %}
+        <tr>
+            <td>{{ rsvp[0] }}</td>
+            <td>{{ rsvp[1] }}</td>
+            <td>{{ rsvp[2] }}</td>
+            <td>{{ rsvp[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

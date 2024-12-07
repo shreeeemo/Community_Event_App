@@ -6,22 +6,37 @@
     <title>Messages</title>
 </head>
 <body>
-    <h1>Send a Message</h1>
-    <form method="POST">
-        <label for="message_content">Message Content:</label>
+    <h1>Messages</h1>
+    <form action="/messages" method="POST">
+        <label>Message Content:</label><br>
         <textarea name="message_content" required></textarea><br>
-        <label for="sent_by">Sent By (User ID):</label>
-        <input type="text" name="sent_by" required><br>
-        <label for="sent_to">Sent To (User ID):</label>
-        <input type="text" name="sent_to" required><br>
-        <label for="event_id">Event:</label>
-        <select name="event_id">
-            {% for event in events %}
-                <option value="{{ event[0] }}">{{ event[1] }}</option>
-            {% endfor %}
-        </select><br>
+        <label>Sent By (User ID):</label><br>
+        <input type="number" name="sent_by" required><br>
+        <label>Sent To (User ID):</label><br>
+        <input type="number" name="sent_to" required><br>
+        <label>Event ID (Optional):</label><br>
+        <input type="number" name="event_id"><br>
         <button type="submit">Send Message</button>
     </form>
-    <a href="/">Back to Home</a>
+    <h2>Existing Messages:</h2>
+    <table border="1">
+        <tr>
+            <th>Message ID</th>
+            <th>Content</th>
+            <th>Sent By</th>
+            <th>Sent To</th>
+            <th>Event (Optional)</th>
+        </tr>
+        {% for message in messages %}
+        <tr>
+            <td>{{ message[0] }}</td>
+            <td>{{ message[1] }}</td>
+            <td>{{ message[2] }}</td>
+            <td>{{ message[3] }}</td>
+            <td>{{ message[4] or 'N/A' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Go Back to Home</a>
 </body>
 </html>

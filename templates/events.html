@@ -6,17 +6,29 @@
     <title>Events</title>
 </head>
 <body>
-    <h1>Upcoming Events</h1>
-    <ul>
+    <h1>Community Events</h1>
+    <table border="1">
+        <tr>
+            <th>Event ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Created By (User ID)</th>
+        </tr>
         {% for event in events %}
-            <li>
-                <strong>{{ event[1] }}</strong><br>
-                {{ event[2] }}<br>
-                Date: {{ event[3] }} Time: {{ event[4] }}<br>
-                Location: {{ event[5] }}
-            </li>
+        <tr>
+            <td>{{ event[0] }}</td>
+            <td>{{ event[1] }}</td>
+            <td>{{ event[2] }}</td>
+            <td>{{ event[3] }}</td>
+            <td>{{ event[4] }}</td>
+            <td>{{ event[5] }}</td>
+            <td>{{ event[6] }}</td>
+        </tr>
         {% endfor %}
-    </ul>
-    <a href="/">Back to Home</a>
+    </table>
+    <a href="/">Go Back to Home</a>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+</head>
+<body>
+    <h1>Create a New Event</h1>
+    <form action="/create_event" method="POST">
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br>
+        <label>Description:</label><br>
+        <textarea name="description" required></textarea><br>
+        <label>Date:</label><br>
+        <input type="date" name="date" required><br>
+        <label>Time:</label><br>
+        <input type="time" name="time" required><br>
+        <label>Location:</label><br>
+        <input type="text" name="location" required><br>
+        <label>Created By (User ID):</label><br>
+        <input type="number" name="created_by" required><br>
+        <button type="submit">Create Event</button>
+    </form>
+</body>
+</html>
